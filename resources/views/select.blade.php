@@ -21,7 +21,7 @@
         </tr>
     </thead>
     <tbody>
-     @foreach ($allstudent as $std)
+     @foreach ($allstudent as $std) 
      
      
         <tr>
@@ -29,12 +29,11 @@
             <td>{{ $std["email"] }}</td>
             <td>{{ $std["password"] }}</td>
             <td><a class="btn btn-info" href="edit/{{ $std["id"] }}">Eidt</a></td>
+            <td><a class="btn btn-danger" href="{{url('delete/')}}/{{$std->id}}">Delete</a></td>
+        
+            
            <td>
-  <form action="{{ url('delete/'.$std['id']) }}" method="POST">
-      @csrf
-      @method('DELETE')
-      <button type="submit" class="btn btn-danger">Delete</button>
-  </form>
+
 </td>
 
         </tr>

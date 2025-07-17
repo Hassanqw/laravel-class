@@ -20,7 +20,7 @@ class MyController extends Controller
      $student->email = $req->email; 
      $student->password = $req->password; 
      $student->save();
-     return redirect("/") ;
+     return redirect("select") ;
     }
     public function select(){
         $student = new students();
@@ -42,8 +42,8 @@ class MyController extends Controller
         return redirect("select");
     }
     public function Delete($id){
-        $student = students::findOrFail($id);
-        $student->delete();
+        $student = students::find($id)->delete();
+     
         return redirect("select");
 
     }

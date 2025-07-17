@@ -15,4 +15,4 @@ Route::post("/",[MyController::class,"create"]);
 Route::get("select" , [MyController::class , "select"]);
 Route::get("edit/{id}" , [MyController::class , "editData"]);
 Route::post("edit/{id}" , [MyController::class , "update"]);
-Route::delete("delete/{id}" , [MyController::class , "Delete"]);
+Route::get("delete/{id}" , [MyController::class , "Delete"]);
